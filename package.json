@@ -1,0 +1,31 @@
+{
+  "name": "instantclick",
+  "version": "3.1.0-2",
+  "description": "dramatically speeds up your website",
+  "main": "dist/instantclick.js",
+  "cdn": "dist/instantclick.js",
+  "unpkg": "dist/instantclick.js",
+  "scripts": {
+    "test": "npm run build",
+    "build": "node build && bili --format umd --compress umd --module-name InstantClick",
+    "prepublishOnly": "npm test"
+  },
+  "author": "EGOIST",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/egoist/instantclick.git"
+  },
+  "files": [
+    "dist",
+    "instantclick.js"
+  ],
+  "homepage": "https://github.com/egoist/instantclick",
+  "bugs": {
+    "url": "https://github.com/egoist/instantclick/issues"
+  },
+  "devDependencies": {
+    "bili": "^5.0.5",
+    "node-fetch": "^3.3.2"
+  }
+}
