@@ -1,57 +1,82 @@
-# instantclick
+# Instantview
+Make the website faster by preloading pages on hover
 
-[![NPM version](https://img.shields.io/npm/v/instantclick.svg?style=flat-square)](https://www.npmjs.com/package/instantclick)
-[![NPM download](https://img.shields.io/npm/dm/instantclick.svg?style=flat-square)](https://www.npmjs.com/package/instantclick)
-[![jsDelivr Hits](https://data.jsdelivr.com/v1/package/npm/instantclick/badge)](https://www.jsdelivr.com/package/npm/instantclick)
+This is a mini script like instantclick, but well-structured version:
+- Script Sandboxing System
+- Improved Script Registry
+- Controlled Script Execution
+- Script Context Management
+- Global Variable Preservation
+- Better Error Handling
+- Script Dependency Management
 
-The unofficial NPM package for the well known [InstantClick](http://instantclick.io) library.
+## Core functionality remains:
 
-```bash
-yarn add instantclick
+[x] Link prefetching on hover/mousedown
+[x] Fast page transitions
+[x] History state management
+[x] Script handling during transitions
+[] Enhance with new perf like DOM-Less feature & rewrite in ES6 *- I think for myself*
+
+## How to use InstantView
+To use this library on your website:
+
+1. Include the JavaScript file in your HTML(header/footer):
+
+```html
+<script src="instantview.js"></script>
 ```
 
-```javascript
-import InstantClick from 'instantclick'
+2. Initialize it when the DOM is ready (HTML in header/footer):
 
-InstantClick.init()
+```html
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+	InstantView.init();
+  });
+</script>
+```
+3. Optional: Add configuration options
+
+```html
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+	// Use mousedown instead of mouseover (faster perceived speed but less preloading)
+	InstantView.init("mousedown");
+	
+	// Add a delay in milliseconds before preloading (reduce unnecessary requests)
+	InstantView.init(100);
+	
+	// Use whitelist mode (only preload links with data-instant attribute)
+	InstantView.init(true);
+	
+	// Combine options
+	InstantView.init(true, "mousedown", 50);
+  });
+</script>
 ```
 
-CDN: [unpkg](https://unpkg.com/instantclick/) | [jsDelivr](https://cdn.jsdelivr.net/npm/instantclick/) (as `window.InstantClick`)
+4. Optional: Listen for events
 
-See more usages and test on the original website: http://instantclick.io/documentation
+```html
+<script>
+  InstantView.on("change", function() {
+	// Page has changed
+	setupAnalytics();
+  });
+  
+  InstantView.on("fetch", function() {
+	// Page fetch started
+	showCustomLoadingIndicator();
+  });
+</script>
+```
+## Issue?
+Read the [DOC](https://github.com/lotusk08/instantview.wiki.git)
 
-## enhancements:
-
-### Modern Preloading System
-
-Replace XMLHttpRequest with Fetch API
-Implement proper resource hints with prioritization
-Add timeout and retry logic for failed preloads
-
-### Smart Detection
-
-Add Intersection Observer implementation
-Implement viewport priority (links in viewport get higher priority)
-Create intelligent preloading that considers available bandwidth
-
-### Event System Overhaul
-
-Create namespaced custom events
-Implement a better event delegation system
-Add proper cleanup for events between page transitions
-
-### Performance Optimizations
-
-Add request caching
-Implement priority queue for preloads
-Add bandwidth detection to adjust preloading behavior
-
-### Integration and Testing
-
-Create compatibility layer for legacy browsers
-Add comprehensive error handling
-Implement testing across different browsers and scenarios
+## Source
+Thank to [InstantClick](http://instantclick.io) & [EGOIST](https://github.com/egoist/instantclick) libraries.
 
 ## License
 
-[MIT](/LICENSE) &copy; [EGOIST](https://github.com/egoist).
+[MIT](/LICENSE) &copy; [stevehoang.com](https://stevehoang.com).
