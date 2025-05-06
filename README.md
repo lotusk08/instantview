@@ -12,11 +12,11 @@ This is a mini script like instantclick, but well-structured version:
 
 ## Core functionality remains:
 
-[x] Link prefetching on hover/mousedown
-[x] Fast page transitions
-[x] History state management
-[x] Script handling during transitions
-[] Enhance with new perf like DOM-Less feature & rewrite in ES6 *- I think for myself*
+- [x] Link prefetching on hover/mousedown
+- [x] Fast page transitions
+- [x] History state management
+- [x] Script handling during transitions
+- [ ] Enhance with new perf like DOM-Less feature & rewrite in ES6 *- I think for myself*
 
 ## How to use InstantView
 To use this library on your website:
@@ -71,8 +71,14 @@ To use this library on your website:
   });
 </script>
 ```
+## Demo
+![demo](demo-on-site.gif)
+_I tested in my site_
+
+Link: https://dev.lotusk08-github-io.pages.dev/
+
 ## Issue?
-Read the [DOC](https://github.com/lotusk08/instantview.wiki.git)
+Read the [WIKI](https://github.com/lotusk08/instantview.wiki.git)
 
 ## Source
 Thank to [InstantClick](http://instantclick.io) & [EGOIST](https://github.com/egoist/instantclick) libraries.
